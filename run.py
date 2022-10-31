@@ -1,3 +1,6 @@
+from xml.etree import ElementInclude
+
+
 def introduction():
     '''Ran when program starts. Asks player if they want to play'''
     answer = input("Welcome to The Greatest Game! Do you want to play?").lower().strip()
@@ -24,8 +27,9 @@ def play_game():
             introduction()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
-    else: 
+    else:
         print("Please input a direction")
+        play_game()
 
 
 def begger_room():
@@ -40,6 +44,17 @@ def begger_room():
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "give the begger money":
         print(f"You hand the begger some money. They look up at you with tired yet bright eyes.\n 'Thank you. Here, no good deed should go unrewarded.'\n They hand you a leather chestpiece.")
-    
+    elif answer == "left":
+        print(f"Heading left you find yourself in a large room.\n The rooms right side is collapsed in. A goblin civilization seems to have made this place apart of their home.")
+        goblin_encounter()
+    elif answer == "right":
+        print(f"Heading right you find yourself in a medium sized room. \n The room contains a very spartan room. A large bullman, a Minotaur stands at a table with a large two handed axe on the table.\n Hes sharpening the blades.")
+        minotaur_encounter()
+
+
+def minotaur_encounter():
+
+def goblin_encounter():
+
 
 introduction()
