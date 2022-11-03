@@ -9,7 +9,7 @@ def introduction():
     else:
         print("Sorry to hear, You're missing out.")
         introduction()
-        
+       
 
 def play_game():
     '''Function that starts the game and offers the player the first of their choices'''
@@ -65,9 +65,10 @@ def minotaur_encounter():
     elif answer == "sneak":
         print("You sneak past the Minotaur, knowing to keep your head slow and your movements slow but commited.\nYou make it past the room and out the other side")
         next_Level()
-    else: 
+    else:
         print("Please enter a viable choice")
         minotaur_encounter()
+
 
 def goblin_encounter():
     '''Function that starts the goblin encounter'''
