@@ -69,7 +69,19 @@ def minotaur_encounter():
         print("Please enter a viable choice")
         minotaur_encounter()
 
-
+def goblin_encounter():
+    '''Function that starts the goblin encounter'''
+    answer = input("The hallway has more broken stone and cracked wall than before. Walking into what might have been a room at some point, half the wall happens to be torn down.\nThe dirt wall has been transformed into a small selection of in and out tunnels.\n You can see some goblins milling about and talking. What do you do?").lower().strip()
+    if answer == "attack" or "fight":
+        print("You rush in, swinging your weapon you take the first small group off guard. But then you notice the many, many eyes glaring back at you from the wall...\n It takes time, but you find yourself exhausted. Unable to fight any longer. GAME OVER.")
+        again = input("Do you want to try again?").lower().strip()
+        if again == "yes":
+            introduction()
+        else:
+            print("Tough luck! We hope you enjoyed The Greatest Game!")
+    if answer == "talk":
+        print("The goblins seem hesitant at first. But after you raise your hands and explain yourself, they seem perfectly fine with letting you pass.")
+        next_Level()
 
 
 
