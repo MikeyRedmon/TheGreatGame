@@ -82,8 +82,11 @@ def goblin_encounter():
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     if answer == "talk":
         print("The goblins seem hesitant at first. But after you raise your hands and explain yourself, they seem perfectly fine with letting you pass.")
-        next_Level()
+        transition()
 
+def transition():
+    '''Function that bridges between phase one and two'''
+    print("As you walk through the dungeon you begin to notice natural light begining to snake its way through the cracks in the ceiling.\nThe air smells fresher. Walking into a slightly more open space you spot a small well with fresh water.\n After a few moments rest you continue.")
 
 
 introduction()
