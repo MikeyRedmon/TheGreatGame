@@ -50,6 +50,9 @@ def begger_room():
     elif answer == "right":
         print("Heading right you find yourself in a medium sized room.\nThe room contains a very spartan room. A large bullman, a Minotaur stands at a table with a large two handed axe on the table.\n Hes sharpening the blades.")
         minotaur_encounter()
+    else:
+        print("Please enter a valid option")
+        begger_room()
 
 
 def minotaur_encounter():
@@ -64,7 +67,7 @@ def minotaur_encounter():
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "sneak":
         print("You sneak past the Minotaur, knowing to keep your head slow and your movements slow but commited.\nYou make it past the room and out the other side")
-        next_Level()
+        transition()
     else:
         print("Please enter a viable choice")
         minotaur_encounter()
@@ -80,13 +83,25 @@ def goblin_encounter():
             introduction()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
-    if answer == "talk":
+    elif answer == "talk":
         print("The goblins seem hesitant at first. But after you raise your hands and explain yourself, they seem perfectly fine with letting you pass.")
         transition()
 
+
 def transition():
     '''Function that bridges between phase one and two'''
-    print("As you walk through the dungeon you begin to notice natural light begining to snake its way through the cracks in the ceiling.\nThe air smells fresher. Walking into a slightly more open space you spot a small well with fresh water.\n After a few moments rest you continue.")
+    print("As you walk through the dungeon you begin to notice natural light beginning to snake its way through the cracks in the ceiling.\nThe air smells fresher. Walking into a slightly more open space you spot a small well with fresh water.\n After a few moments rest you continue.")
+    answer = input("The stone passageways are now more mossy. Covered in a slight damp as you enter a large ruined room.\nThe ceiling is half caved in, but you can still see various halls. \n But what catches your eye is an iron gate on the floor above you.\n Where do you go?").lower().strip()
+    if answer == "explore":
+        print("You take some time to explore, walking down a hallway you slip as you turn a corner. The last thing you remember is falling. GAME OVER.")
+    elif answer == "gate": 
+        print("Climbing up some stones to the second floor, you spot a bit of sky through a few pieces of rubble. You're almost there. Just have this gate to get through...")
+        the_Gate()
+    else:
+        print("Please enter a viable choice")
+        transition()
+
+
     
 
 
