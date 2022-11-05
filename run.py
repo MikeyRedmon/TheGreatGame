@@ -24,7 +24,7 @@ def play_game():
         print("The hallway smells of death, with a coppery tinge hanging in the air. You clench your teeth and step forward.\n You hear a chunk and look down. You've stepped on a pressure plate.\n The last thing you hear is the grind of metal on stone. GAME OVER")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     else:
@@ -39,11 +39,12 @@ def begger_room():
         print("The begger looks up as you charge toward them. You swing your weapon.\n An aura surrounds the begger as your weapon freezes mid air. 'Not the Smartest decision you've made.'\n They speak with a disapointment hanging in their tone.\n The world blurs and you feel yourself zip across the room... GAME OVER")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "give the begger money":
         print("You hand the begger some money. They look up at you with tired yet bright eyes.\n 'Thank you. Here, no good deed should go unrewarded.'\n They hand you a leather chestpiece.")
+        begger_room()
     elif answer == "left":
         print("Heading left you find yourself in a large room.\nThe rooms right side is collapsed in. A goblin civilization seems to have made this place apart of their home.")
         goblin_encounter()
@@ -62,7 +63,7 @@ def minotaur_encounter():
         print("The Minotaur turns to you, their eyes immediately flairing in anger as they pick up the axe with one hand and swing it toward you.\n Caught unawares you take the full brunt of it to the side. The world zips and you fall unconcious. GAME OVER")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "sneak":
@@ -76,16 +77,19 @@ def minotaur_encounter():
 def goblin_encounter():
     '''Function that starts the goblin encounter'''
     answer = input("The hallway has more broken stone and cracked wall than before. Walking into what might have been a room at some point, half the wall happens to be torn down.\nThe dirt wall has been transformed into a small selection of in and out tunnels.\n You can see some goblins milling about and talking. What do you do?").lower().strip()
-    if answer == "attack" or "fight":
+    if answer == "attack":
         print("You rush in, swinging your weapon you take the first small group off guard. But then you notice the many, many eyes glaring back at you from the wall...\n It takes time, but you find yourself exhausted. Unable to fight any longer. GAME OVER.")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "talk":
         print("The goblins seem hesitant at first. But after you raise your hands and explain yourself, they seem perfectly fine with letting you pass.")
         transition()
+    else:
+        print("Please enter a viable choice")
+        goblin_encounter()
 
 
 def transition():
@@ -96,7 +100,7 @@ def transition():
         print("You take some time to explore, walking down a hallway you slip as you turn a corner. The last thing you remember is falling. GAME OVER.")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "gate":
@@ -114,7 +118,7 @@ def the_gate():
         print("You rub your hands together and try to climb up the gate.\n A few rungs up you lose your grip and fall. GAME OVER")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == 'investigate':
@@ -132,7 +136,7 @@ def wench():
         print("You use the sword as leverage and after putting some strain into it you hear a sickening snap noise.\n You feel something hot explode down your chest. You look down, the broken end of your blade stuck in your chest.\n GAME OVER")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "explore":
@@ -150,7 +154,7 @@ def mossy_hallway():
         print("Entering the first door you look around for anything that might be useful.\n Just as you feel a presence behind you, you feel an impact on the back of your head.\n GAME OVER.")
         again = input("Do you want to try again?").lower().strip()
         if again == "yes":
-            introduction()
+            play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "second door":
@@ -159,7 +163,7 @@ def mossy_hallway():
             print("you attempt to sneak around the spiders. As you get close to the oil can you feel your leg touch a mossy web.\n The two spiders immedately jump you.\n GAME OVER.")
             again = input("Do you want to try again?").lower().strip()
             if again == "yes":
-                introduction()
+                play_game()
             else:
                 print("Tough luck! We hope you enjoyed The Greatest Game!")
         elif choice == "attack":
