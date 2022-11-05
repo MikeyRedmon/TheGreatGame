@@ -94,6 +94,11 @@ def transition():
     answer = input("The stone passageways are now more mossy. Covered in a slight damp as you enter a large ruined room.\nThe ceiling is half caved in, but you can still see various halls. \n But what catches your eye is an iron gate on the floor above you.\n Where do you go?").lower().strip()
     if answer == "explore":
         print("You take some time to explore, walking down a hallway you slip as you turn a corner. The last thing you remember is falling. GAME OVER.")
+        again = input("Do you want to try again?").lower().strip()
+        if again == "yes":
+            introduction()
+        else:
+            print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "gate": 
         print("Climbing up some stones to the second floor, you spot a bit of sky through a few pieces of rubble. You're almost there. Just have this gate to get through...")
         the_Gate()
@@ -102,7 +107,19 @@ def transition():
         transition()
 
 
-    
+def the_Gate():
+    '''Function that runs the gate encounter'''
+    answer = input("The old, rust and moss covered Iron gate.\n What do you do?").lower().strip()
+    if answer == "use sword":
+        print("You use the sword as leverage and after putting some strain into it you hear a sickening snap noise.\n You feel something hot explode down your chest. You look down, the broken end of your blade stuck in your chest.\n GAME OVER")
+        again = input("Do you want to try again?").lower().strip()
+        if again == "yes":
+            introduction()
+        else:
+            print("Tough luck! We hope you enjoyed The Greatest Game!")
+    elif answer == "climb the gate":
+        print("You rub your hands together and try to climb up the gate.\n A few rungs up you loose your grip and fall. GAME OVER")
+
 
 
 introduction()
