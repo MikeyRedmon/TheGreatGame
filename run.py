@@ -9,7 +9,7 @@ def introduction():
     else:
         print("Sorry to hear, You're missing out.")
         introduction()
-    
+
 
 def play_game():
     '''Function that starts the game and offers the player the first of their choices'''
@@ -154,7 +154,7 @@ def mossy_hallway():
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "second door":
-        choice = input("You see a pair of giant spiders, covered in thick moss.\n Both of them seem unawares of you as they scuttle about.\n Fixing a web made from moss. In the corner of the room you see a small oil can.\n What do you do?").lower().strip()
+        choice = input("You see a pair of giant spiders, covered in thick moss.\n Both of them seem unawares of you as they scuttle about. Fixing a web made from moss. In the corner of the room you see a small oil can.\n What do you do?").lower().strip()
         if choice == "sneak":
             print("you attempt to sneak around the spiders. As you get close to the oil can you feel your leg touch a mossy web.\n The two spiders immedately jump you.\n GAME OVER.")
             again = input("Do you want to try again?").lower().strip()
@@ -164,11 +164,16 @@ def mossy_hallway():
                 print("Tough luck! We hope you enjoyed The Greatest Game!")
         elif choice == "attack":
             print("You swing your weapon. While the spiders are large, they're surpsingly brittle.\nYou take the oil can.")
+            end()
     else:
         print("Please input a valid choice")
         mossy_hallway()
 
 
+def end():
+    '''Function that runs at the end of the game cycle.'''
+    print("Walking back to the wench system, you apply whats left in the oil can liberally.\n Testing the wench after a few minutes, it begins to give. The gate raises.\nAt the end of the hallway you see a spiral staircase.\nYou climb out into the world, emerging in a ruined building. END")
+    print("Thank you for playing! I really appreciate it and hope you had as much fun as I did writing it!")
 
 
 introduction()
