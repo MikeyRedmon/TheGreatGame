@@ -27,6 +27,9 @@ def play_game():
             play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
+    elif answer == "sleep":
+        print("You decide to just go back to bed. Today isn't the day for this")
+        introduction()
     else:
         print("Please input a direction")
         play_game()
