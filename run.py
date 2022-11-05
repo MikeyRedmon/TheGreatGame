@@ -3,13 +3,13 @@ from xml.etree import ElementInclude
 
 def introduction():
     '''Ran when program starts. Asks player if they want to play'''
-    answer = input("Welcome to The Greatest Game! Do you want to play?").lower().strip()
+    answer = input("Welcome to The Greatest Game! Do you want to play?\n Mild arachnophobia warning, violence warning.").lower().strip()
     if answer == "yes":
         play_game()
     else:
         print("Sorry to hear, You're missing out.")
         introduction()
-       
+    
 
 def play_game():
     '''Function that starts the game and offers the player the first of their choices'''
@@ -99,17 +99,35 @@ def transition():
             introduction()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
-    elif answer == "gate": 
+    elif answer == "gate":
         print("Climbing up some stones to the second floor, you spot a bit of sky through a few pieces of rubble. You're almost there. Just have this gate to get through...")
-        the_Gate()
+        the_gate()
     else:
-        print("Please enter a viable choice")
+        print("Please enter a valid choice")
         transition()
 
 
-def the_Gate():
+def the_gate():
     '''Function that runs the gate encounter'''
     answer = input("The old, rust and moss covered Iron gate.\n What do you do?").lower().strip()
+    if answer == "climb the gate":
+        print("You rub your hands together and try to climb up the gate.\n A few rungs up you lose your grip and fall. GAME OVER")
+        again = input("Do you want to try again?").lower().strip()
+        if again == "yes":
+            introduction()
+        else:
+            print("Tough luck! We hope you enjoyed The Greatest Game!")
+    elif answer == 'investigate':
+        print("Next to the gate in an alcove is an old, rust and moss covered wench.")
+        wench()
+    else:
+        print("Please input a valid choice")
+        the_gate()
+
+
+def wench():
+    '''Function for wench encounter'''
+    answer = input("You see the wench system, its covered in moss and rust. It looks to be the easiest way out however.").lower().strip()
     if answer == "use sword":
         print("You use the sword as leverage and after putting some strain into it you hear a sickening snap noise.\n You feel something hot explode down your chest. You look down, the broken end of your blade stuck in your chest.\n GAME OVER")
         again = input("Do you want to try again?").lower().strip()
@@ -117,8 +135,39 @@ def the_Gate():
             introduction()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
-    elif answer == "climb the gate":
-        print("You rub your hands together and try to climb up the gate.\n A few rungs up you loose your grip and fall. GAME OVER")
+    elif answer == "explore":
+        print("You look around, spotting several hallways on this floor.\n However, only one of them seems to be accessable.\n You head toward the hall.")
+        mossy_hallway()
+    else:
+        print("please input a valid choice")
+        wench()
+
+
+def mossy_hallway():
+    '''The function that runs the last major choice scenario'''
+    answer = input("You see two doors down the hallway. Which one do you go down?").lower().strip()
+    if answer == "first door":
+        print("Entering the first door you look around for anything that might be useful.\n Just as you feel a presence behind you, you feel an impact on the back of your head.\n GAME OVER.")
+        again = input("Do you want to try again?").lower().strip()
+        if again == "yes":
+            introduction()
+        else:
+            print("Tough luck! We hope you enjoyed The Greatest Game!")
+    elif answer == "second door":
+        choice = input("You see a pair of giant spiders, covered in thick moss.\n Both of them seem unawares of you as they scuttle about.\n Fixing a web made from moss. In the corner of the room you see a small oil can.\n What do you do?").lower().strip()
+        if choice == "sneak":
+            print("you attempt to sneak around the spiders. As you get close to the oil can you feel your leg touch a mossy web.\n The two spiders immedately jump you.\n GAME OVER.")
+            again = input("Do you want to try again?").lower().strip()
+            if again == "yes":
+                introduction()
+            else:
+                print("Tough luck! We hope you enjoyed The Greatest Game!")
+        elif choice == "attack":
+            print("You swing your weapon. While the spiders are large, they're surpsingly brittle.\nYou take the oil can.")
+    else:
+        print("Please input a valid choice")
+        mossy_hallway()
+
 
 
 
