@@ -1,1 +1,1 @@
-# Your requirements go here
+Colorama==0.4.6

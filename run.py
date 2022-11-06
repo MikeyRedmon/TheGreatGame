@@ -5,74 +5,91 @@ from colorama import Fore, Back, Style
 
 # Colour Tags
 
-t_color = Fore.LIGHTRED_EX   # Terminal Colour
-i_color = Fore.LIGHTCYAN_EX  # Imput Colour
-e_color = Back.RED           # Error Colour
-dim = Style.DIM              # Dim Text
-reset_all = Style.RESET_ALL  # Reset to normal
+t_color = Fore.LIGHTRED_EX      # Terminal Colour
+i_color = Fore.LIGHTCYAN_EX     # Imput Colour
+e_color = Back.RED              # Error Colour
+s_color = Back.LIGHTMAGENTA_EX  # Secret Colour
+d_color = Fore.GREEN            # Death Text
+reset_all = Style.RESET_ALL     # Reset to normal
 
 
 def introduction():
     '''Ran when program starts. Asks player if they want to play'''
-    answer = input(textwrap.fill("Welcome to The Greatest Game! Do you want to play? Mild arachnophobia warning, violence warning.")).lower().strip()
+    answer = input(i_color + textwrap.fill("Welcome to The Greatest Game! Do you want to play?" "Mild arachnophobia warning, violence warning.")).lower().strip()
     if answer == "yes":
         play_game()
     else:
-        print( "Sorry to hear, You're missing out." )
-        
+        print(t_color + "Sorry to hear, You're missing out.")
+        print(reset_all)
 
 
 def play_game():
     '''Function that starts the game and offers the player the first of their choices'''
-    answer = input("You wake up in a cold, dark cell.\n You don't remember how you ended up here.\n But you know you must get out.\n The cell bars are broken and rusted, like something tore them apart from the inside out,\n You'd rather not meet the creature who did this.\n So you leave. You come to a hallway with an intersection. One goes right, one goes left and one straight.\n Which way do you go?").lower().strip()
+    print(t_color + textwrap.fill("You wake up in a cold, dark cell." " You don't remember how you ended up here. But you know you must get out." " The cell bars are broken and rusted, like something tore them apart from the inside out" " You'd rather not meet the creature who did this So you leave."))
+    print(reset_all)
+    answer = input(i_color + "You come to an intersection. One goes Left, One goes right and one continues straight. Where do you go?").lower().strip()
+    print(reset_all)
     if answer == "left":
-        print("Down the hall to the left you come to a room,\n inside you see a hand and a half sword\n its simple, but sharp and well weighted.\n Beside it you see a pouch of gold. You take the items\n knowing you'll need them.")
+        print(s_color + "Down the hall to the left you come to a room,\n inside you see a hand and a half sword\n its simple, but sharp and well weighted.\n Beside it you see a pouch of gold. You take the items\n knowing you'll need them.")
         begger_room()
-    elif answer == "center":
-        print("The hallway is long and barren, no torches light the way as you spot a wooden door. Its ajar. You enter.")
+        print(reset_all)
+    elif answer == "straight":
+        print(t_color + textwrap.fill("The hallway is long and barren, no torches light the way as you spot a wooden door. Its ajar. You enter."))
         begger_room()
+        print(reset_all)
     elif answer == "right":
-        print("The hallway smells of death, with a coppery tinge hanging in the air. You clench your teeth and step forward.\n You hear a chunk and look down. You've stepped on a pressure plate.\n The last thing you hear is the grind of metal on stone. GAME OVER")
-        again = input("Do you want to try again?").lower().strip()
+        print(d_color + textwrap.fill("The hallway smells of death, with a coppery tinge hanging in the air. You clench your teeth and step forward.\n You hear a chunk and look down. You've stepped on a pressure plate.\n The last thing you hear is the grind of metal on stone. GAME OVER"))
+        print(reset_all)
+        again = input(i_color + "Do you want to try again?").lower().strip()
         if again == "yes":
             play_game()
         else:
-            print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == "sleep":
-        print("You decide to just go back to bed. Today isn't the day for this")
+        print(s_color + "You decide to just go back to bed. Today isn't the day for this")
+        print(reset_all)
         introduction()
     else:
-        print("Please input a direction")
+        print(e_color + "Please input a direction")
         play_game()
+        print(reset_all)
 
 
 def begger_room():
     '''Function that starts the begger room sequence.'''
-    answer = input("Entering the room you you see more old worn stone. The room has three things of interest.\n Sitting off to the side and covered in rags is an individual down on their luck.\n They glance up at you but don't maintain eye contact.\n Their are two doors, one heading left and one heading right.").lower().strip()
+    answer = input(i_color + textwrap.fill("Entering the room you you see more old worn stone. The room has three things of interest." "Sitting off to the side and covered in rags is an individual down on their luck. They glance up at you but don't maintain eye contact." " Their are two doors, one heading left and one heading right.")).lower().strip()
+    print(reset_all)
     if answer == "attack the begger":
-        print("The begger looks up as you charge toward them. You swing your weapon.\n An aura surrounds the begger as your weapon freezes mid air. 'Not the Smartest decision you've made.'\n They speak with a disapointment hanging in their tone.\n The world blurs and you feel yourself zip across the room... GAME OVER")
-        again = input("Do you want to try again?").lower().strip()
+        print(d_color + textwrap.fill("The begger looks up as you charge toward them. You swing your weapon." " An aura surrounds the begger as your weapon freezes mid air. 'Not the Smartest decision you've made.'" " They speak with a disapointment hanging in their tone. The world blurs and you feel yourself zip across the room..." "GAME OVER"))
+        print(reset_all)
+        again = input(t_color + "Do you want to try again?").lower().strip()
+        print(reset_all)
         if again == "yes":
             play_game()
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == "give the begger money":
-        print("You hand the begger some money. They look up at you with tired yet bright eyes.\n 'Thank you. Here, no good deed should go unrewarded.'\n They hand you a leather chestpiece.")
+        print(s_color + textwrap.fill("You hand the begger some money. They look up at you with tired yet bright eyes.\n 'Thank you. Here, no good deed should go unrewarded.'\n They hand you a leather chestpiece."))
+        print(reset_all)
         begger_room()
     elif answer == "left":
-        print("Heading left you find yourself in a large room.\nThe rooms right side is collapsed in. A goblin civilization seems to have made this place apart of their home.")
+        print(t_color + "Heading left you find yourself in a large room.\nThe rooms right side is collapsed in. A goblin civilization seems to have made this place apart of their home.")
         goblin_encounter()
+        print(reset_all)
     elif answer == "right":
-        print("Heading right you find yourself in a medium sized room.\nThe room contains a very spartan room. A large bullman, a Minotaur stands at a table with a large two handed axe on the table.\n Hes sharpening the blades.")
+        print(t_color + textwrap.fill("Heading right you find yourself in a medium sized room. The room contains a very spartan room." " A large bullman, a Minotaur stands at a table with a large two handed axe on the table. Hes sharpening the blades."))
         minotaur_encounter()
     else:
-        print("Please enter a valid option")
+        print(e_color + "Please enter a valid option")
         begger_room()
+        print(reset_all)
 
 
 def minotaur_encounter():
     '''Function that starts the minotaur encounter'''
-    print(Style.BRIGHT + Fore.LIGHTCYAN_EX +''' 
+    print(Style.BRIGHT + Fore.LIGHTCYAN_EX + '''
      .      .
      |\____/|
     (\|----|/)
@@ -94,20 +111,27 @@ def minotaur_encounter():
       |= || =|
       |= /\ =|
       /_/  \_\ ''')
-    answer = input( reset_all + "Walking down a short stoney hallway the player walks into a small room, it has a very spartan look.\n A bed and very little else takes up a bit of space in the corner. Though the massive Minotaur sitting at a desk with a heavy axe with their back to the door might be bigger.\n What do you do?").lower().strip()
+    print(reset_all)
+    answer = input("Walking down a short stoney hallway the player walks into a small room, it has a very spartan look.\n A bed and very little else takes up a bit of space in the corner. Though the massive Minotaur sitting at a desk with a heavy axe with their back to the door might be bigger.\n What do you do?").lower().strip()
     if answer == "fight" or "talk":
-        print("The Minotaur turns to you, their eyes immediately flairing in anger as they pick up the axe with one hand and swing it toward you.\n Caught unawares you take the full brunt of it to the side. The world zips and you fall unconcious. GAME OVER")
-        again = input("Do you want to try again?").lower().strip()
+        print(d_color + textwrap.fill("The Minotaur turns to you, their eyes immediately flairing in anger as they pick up the axe with one hand and swing it toward you." "Caught unawares you take the full brunt of it to the side. The world zips and you fall unconcious." "GAME OVER"))
+        print(reset_all)
+        again = input(i_color + "Do you want to try again?").lower().strip()
         if again == "yes":
             play_game()
+            print(reset_all)
         else:
-            print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == "sneak":
-        print("You sneak past the Minotaur, knowing to keep your head slow and your movements slow but commited.\nYou make it past the room and out the other side")
+        print(t_color + "You sneak past the Minotaur, knowing to keep your head low and your movements slow but commited." "You make it past the room and out the other side")
+        print(reset_all)
         transition()
     else:
-        print("Please enter a viable choice")
+        print(e_color + "Please enter a viable choice")
+        print(reset_all)
         minotaur_encounter()
+        
 
 
 def goblin_encounter():
@@ -194,6 +218,22 @@ def mossy_hallway():
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "second door":
+        print('''              
+              (
+               )
+              (
+        /\  .-"""-.  /\
+       //\\/  ,,,  \//\\
+       |/\| ,;;;;;, |/\|
+       //\\\;-"""-;///\\
+      //  \/   .   \/  \\
+     (| ,-_| \ | / |_-, |)
+       //`__\.-.-./__`\\
+      // /.-(() ())-.\ \\
+     (\ |)   '---'   (| /)
+      ` (|           |) `
+        \)           (/
+        ''')
         choice = input("You see a pair of giant spiders, covered in thick moss.\n Both of them seem unawares of you as they scuttle about. Fixing a web made from moss. In the corner of the room you see a small oil can.\n What do you do?").lower().strip()
         if choice == "sneak":
             print("you attempt to sneak around the spiders. As you get close to the oil can you feel your leg touch a mossy web.\n The two spiders immedately jump you.\n GAME OVER.")
