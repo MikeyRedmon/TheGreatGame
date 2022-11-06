@@ -8,14 +8,15 @@ from colorama import Fore, Back, Style
 t_color = Fore.LIGHTRED_EX      # Terminal Colour
 i_color = Fore.LIGHTCYAN_EX     # Imput Colour
 e_color = Back.RED              # Error Colour
-s_color = Back.LIGHTMAGENTA_EX  # Secret Colour
+s_color = Fore.LIGHTMAGENTA_EX  # Secret Colour
 d_color = Fore.GREEN            # Death Text
 reset_all = Style.RESET_ALL     # Reset to normal
 
 
 def introduction():
     '''Ran when program starts. Asks player if they want to play'''
-    answer = input(i_color + textwrap.fill("Welcome to The Greatest Game! Do you want to play?" "Mild arachnophobia warning, violence warning.")).lower().strip()
+    answer = input(i_color + textwrap.fill("Welcome to The Greatest Game! Do you want to play?" " Mild arachnophobia warning, violence warning.")).lower().strip()
+    print(reset_all)
     if answer == "yes":
         play_game()
     else:
@@ -89,28 +90,6 @@ def begger_room():
 
 def minotaur_encounter():
     '''Function that starts the minotaur encounter'''
-    print(Style.BRIGHT + Fore.LIGHTCYAN_EX + '''
-     .      .
-     |\____/|
-    (\|----|/)
-     \ 0  0 /
-      |    |
-   ___/\../\____
-  /     --       \
- /  \         /   \
-|    \___/___/(   |
-\   /|  }{   | \  )
- \  ||__}{__|  |  |
-  \  |;;;;;;;\  \ / \_______
-   \ /;;;;;;;;| [,,[|======'
-     |;;;;;;/ |     /
-     ||;;|\   |
-     ||;;/|   /
-     \_|:||__|
-      \ ;||  /
-      |= || =|
-      |= /\ =|
-      /_/  \_\ ''')
     print(reset_all)
     answer = input("Walking down a short stoney hallway the player walks into a small room, it has a very spartan look.\n A bed and very little else takes up a bit of space in the corner. Though the massive Minotaur sitting at a desk with a heavy axe with their back to the door might be bigger.\n What do you do?").lower().strip()
     if answer == "fight" or "talk":
@@ -131,79 +110,99 @@ def minotaur_encounter():
         print(e_color + "Please enter a viable choice")
         print(reset_all)
         minotaur_encounter()
-        
 
 
 def goblin_encounter():
     '''Function that starts the goblin encounter'''
-    answer = input("The hallway has more broken stone and cracked wall than before. Walking into what might have been a room at some point, half the wall happens to be torn down.\nThe dirt wall has been transformed into a small selection of in and out tunnels.\n You can see some goblins milling about and talking. What do you do?").lower().strip()
+    answer = input(i_color + textwrap.fill("The hallway has more broken stone and cracked wall than before." "Walking into what might have been a room at some point, half the wall happens to be torn down. The dirt wall has been transformed into a small selection of in and out tunnels." " You can see some goblins milling about and talking. What do you do?")).lower().strip()
+    print(reset_all)
     if answer == "attack":
-        print("You rush in, swinging your weapon you take the first small group off guard. But then you notice the many, many eyes glaring back at you from the wall...\n It takes time, but you find yourself exhausted. Unable to fight any longer. GAME OVER.")
-        again = input("Do you want to try again?").lower().strip()
+        print(d_color + textwrap.fill("You rush in, swinging your weapon you take the first small group off guard. But then you notice the many, many eyes glaring back at you from the wall..." " ...It takes time, but you find yourself exhausted. Unable to fight any longer." "GAME OVER."))
+        print(reset_all)
+        again = input(i_color + "Do you want to try again?").lower().strip()
+        print(reset_all)
         if again == "yes":
             play_game()
         else:
-            print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == "talk":
-        print("The goblins seem hesitant at first. But after you raise your hands and explain yourself, they seem perfectly fine with letting you pass.")
+        print(t_color + "The goblins seem hesitant at first. But after you raise your hands and explain yourself, they seem perfectly fine with letting you pass.")
+        print(reset_all)
         transition()
     else:
-        print("Please enter a viable choice")
+        print(t_color + "Please enter a viable choice")
+        print(reset_all)
         goblin_encounter()
 
 
 def transition():
     '''Function that bridges between phase one and two'''
-    print("As you walk through the dungeon you begin to notice natural light beginning to snake its way through the cracks in the ceiling.\nThe air smells fresher. Walking into a slightly more open space you spot a small well with fresh water.\n After a few moments rest you continue.")
-    answer = input("The stone passageways are now more mossy. Covered in a slight damp as you enter a large ruined room.\nThe ceiling is half caved in, but you can still see various halls. \n But what catches your eye is an iron gate on the floor above you.\n Where do you go?").lower().strip()
+    print(t_color + textwrap.fill("As you walk through the dungeon you begin to notice natural light beginning to snake its way through the cracks in the ceiling."" The air smells fresher. Walking into a slightly more open space you spot a small well with fresh water. After a few moments rest you continue."))
+    print(reset_all)
+    answer = input(i_color + textwrap.fill("The stone passageways are now more mossy."" Covered in a slight damp as you enter a large ruined room. The ceiling is half caved in, but you can still see various halls."" But what catches your eye is an iron gate on the floor above you. Where do you go?")).lower().strip()
+    print(reset_all)
     if answer == "explore":
-        print("You take some time to explore, walking down a hallway you slip as you turn a corner. The last thing you remember is falling. GAME OVER.")
+        print(d_color + "You take some time to explore, walking down a hallway you slip as you turn a corner. The last thing you remember is falling. GAME OVER.")
+        print(reset_all)
         again = input("Do you want to try again?").lower().strip()
+        print(reset_all)
         if again == "yes":
             play_game()
         else:
-            print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == "gate":
-        print("Climbing up some stones to the second floor, you spot a bit of sky through a few pieces of rubble. You're almost there. Just have this gate to get through...")
+        print(t_color + "Climbing up some stones to the second floor, you spot a bit of sky through a few pieces of rubble. You're almost there. Just have this gate to get through...")
+        print(reset_all)
         the_gate()
     else:
-        print("Please enter a valid choice")
+        print(e_color + "Please enter a valid choice")
+        print(reset_all)
         transition()
 
 
 def the_gate():
     '''Function that runs the gate encounter'''
-    answer = input("The old, rust and moss covered Iron gate.\n What do you do?").lower().strip()
+    answer = input(i_color + "The old, rust and moss covered Iron gate.\n What do you do?").lower().strip()
+    print(reset_all)
     if answer == "climb the gate":
-        print("You rub your hands together and try to climb up the gate.\n A few rungs up you lose your grip and fall. GAME OVER")
-        again = input("Do you want to try again?").lower().strip()
+        print(d_color + "You rub your hands together and try to climb up the gate.\n A few rungs up you lose your grip and fall. GAME OVER")
+        again = input(i_color + "Do you want to try again?").lower().strip()
         if again == "yes":
             play_game()
         else:
-            print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == 'investigate':
-        print("Next to the gate in an alcove is an old, rust and moss covered wench.")
+        print(t_color + "Next to the gate in an alcove is an old, rust and moss covered wench.")
         wench()
     else:
-        print("Please input a valid choice")
+        print(e_color + "Please input a valid choice")
         the_gate()
 
 
 def wench():
     '''Function for wench encounter'''
-    answer = input("You see the wench system, its covered in moss and rust. It looks to be the easiest way out however.").lower().strip()
+    answer = input(i_color + "You see the wench system, its covered in moss and rust. It looks to be the easiest way out however.").lower().strip()
+    print(reset_all)
     if answer == "use sword":
-        print("You use the sword as leverage and after putting some strain into it you hear a sickening snap noise.\n You feel something hot explode down your chest. You look down, the broken end of your blade stuck in your chest.\n GAME OVER")
-        again = input("Do you want to try again?").lower().strip()
+        print(d_color + textwrap.fill("You use the sword as leverage and after putting some strain into it you hear a sickening snap noise." " You feel something hot explode down your chest. You look down, the broken end of your blade stuck in your chest." " GAME OVER"))
+        print(reset_all)
+        again = input(i_color + "Do you want to try again?").lower().strip()
+        print(reset_all)
         if again == "yes":
             play_game()
         else:
-            print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == "explore":
-        print("You look around, spotting several hallways on this floor.\n However, only one of them seems to be accessable.\n You head toward the hall.")
+        print(t_color + "You look around, spotting several hallways on this floor.\n However, only one of them seems to be accessable.\n You head toward the hall.")
+        print(reset_all)
         mossy_hallway()
     else:
-        print("please input a valid choice")
+        print(e_color + "please input a valid choice")
+        print(reset_all)
         wench()
 
 
@@ -218,22 +217,6 @@ def mossy_hallway():
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
     elif answer == "second door":
-        print('''              
-              (
-               )
-              (
-        /\  .-"""-.  /\
-       //\\/  ,,,  \//\\
-       |/\| ,;;;;;, |/\|
-       //\\\;-"""-;///\\
-      //  \/   .   \/  \\
-     (| ,-_| \ | / |_-, |)
-       //`__\.-.-./__`\\
-      // /.-(() ())-.\ \\
-     (\ |)   '---'   (| /)
-      ` (|           |) `
-        \)           (/
-        ''')
         choice = input("You see a pair of giant spiders, covered in thick moss.\n Both of them seem unawares of you as they scuttle about. Fixing a web made from moss. In the corner of the room you see a small oil can.\n What do you do?").lower().strip()
         if choice == "sneak":
             print("you attempt to sneak around the spiders. As you get close to the oil can you feel your leg touch a mossy web.\n The two spiders immedately jump you.\n GAME OVER.")
