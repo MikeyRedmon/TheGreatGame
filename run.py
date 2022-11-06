@@ -168,7 +168,9 @@ def the_gate():
     print(reset_all)
     if answer == "climb the gate":
         print(d_color + "You rub your hands together and try to climb up the gate.\n A few rungs up you lose your grip and fall. GAME OVER")
+        print(reset_all)
         again = input(i_color + "Do you want to try again?").lower().strip()
+        print(reset_all)
         if again == "yes":
             play_game()
         else:
@@ -176,9 +178,11 @@ def the_gate():
             print(reset_all)
     elif answer == 'investigate':
         print(t_color + "Next to the gate in an alcove is an old, rust and moss covered wench.")
+        print(reset_all)
         wench()
     else:
         print(e_color + "Please input a valid choice")
+        print(reset_all)
         the_gate()
 
 
@@ -208,35 +212,44 @@ def wench():
 
 def mossy_hallway():
     '''The function that runs the last major choice scenario'''
-    answer = input("You see two doors down the hallway. Which one do you go down?").lower().strip()
+    answer = input(i_color + "You see two doors down the hallway. Which one do you go down?").lower().strip()
+    print(reset_all)
     if answer == "first door":
-        print("Entering the first door you look around for anything that might be useful.\n Just as you feel a presence behind you, you feel an impact on the back of your head.\n GAME OVER.")
-        again = input("Do you want to try again?").lower().strip()
+        print(t_color + textwrap.fill("Entering the first door you look around for anything that might be useful."" Just as you feel a presence behind you, you feel an impact on the back of your head."" GAME OVER."))
+        print(reset_all)
+        again = input(i_color + "Do you want to try again?").lower().strip()
+        print(reset_all)
         if again == "yes":
             play_game()
         else:
-            print("Tough luck! We hope you enjoyed The Greatest Game!")
+            print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+            print(reset_all)
     elif answer == "second door":
-        choice = input("You see a pair of giant spiders, covered in thick moss.\n Both of them seem unawares of you as they scuttle about. Fixing a web made from moss. In the corner of the room you see a small oil can.\n What do you do?").lower().strip()
+        choice = input(i_color + textwrap.fill("You see a pair of giant spiders, covered in thick moss. Both of them seem unawares of you as they scuttle about."" Fixing a web made from moss. In the corner of the room you see a small oil can."" What do you do?")).lower().strip()
+        print(reset_all)
         if choice == "sneak":
-            print("you attempt to sneak around the spiders. As you get close to the oil can you feel your leg touch a mossy web.\n The two spiders immedately jump you.\n GAME OVER.")
-            again = input("Do you want to try again?").lower().strip()
+            print(t_color + textwrap.fill("You attempt to sneak around the spiders. As you get close to the oil can you feel your leg touch a mossy web. The two spiders immedately jump you."" GAME OVER."))
+            again = input(i_color + "Do you want to try again?").lower().strip()
+            print(reset_all)
             if again == "yes":
                 play_game()
             else:
-                print("Tough luck! We hope you enjoyed The Greatest Game!")
+                print(t_color + "Tough luck! We hope you enjoyed The Greatest Game!")
+                print(reset_all)
         elif choice == "attack":
-            print("You swing your weapon. While the spiders are large, they're surpsingly brittle.\nYou take the oil can.")
+            print(t_color + "You swing your weapon. While the spiders are large, they're surprisingly brittle. You take the oil can.")
+            print(reset_all)
             end()
     else:
-        print("Please input a valid choice")
+        print(e_color + "Please input a valid choice")
+        print(reset_all)
         mossy_hallway()
 
 
 def end():
     '''Function that runs at the end of the game cycle.'''
-    print("Walking back to the wench system, you apply whats left in the oil can liberally.\n Testing the wench after a few minutes, it begins to give. The gate raises.\nAt the end of the hallway you see a spiral staircase.\nYou climb out into the world, emerging in a ruined building. END")
-    print("Thank you for playing! I really appreciate it and hope you had as much fun as I did writing it!")
+    print(t_color + textwrap.fill("Walking back to the wench system, you apply whats left in the oil can liberally."" Testing the wench after a few minutes, it begins to give. The gate raises. At the end of the hallway you see a spiral staircase."" You climb out into the world, emerging in a ruined building. END"))
+    print(t_color + "Thank you for playing! I really appreciate it and hope you had as much fun as I did writing it!")
 
 
 introduction()
