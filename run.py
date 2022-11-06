@@ -1,14 +1,25 @@
-from xml.etree import ElementInclude
+# Import Textwrap to wrap long text for better visuals
+import textwrap
+# Import Colorama for a better, more visually appealing experiance.
+from colorama import Fore, Back, Style
+
+# Colour Tags
+
+t_color = Fore.LIGHTRED_EX   # Terminal Colour
+i_color = Fore.LIGHTCYAN_EX  # Imput Colour
+e_color = Back.RED           # Error Colour
+dim = Style.DIM              # Dim Text
+reset_all = Style.RESET_ALL  # Reset to normal
 
 
 def introduction():
     '''Ran when program starts. Asks player if they want to play'''
-    answer = input("Welcome to The Greatest Game! Do you want to play?\n Mild arachnophobia warning, violence warning.").lower().strip()
+    answer = input(textwrap.fill("Welcome to The Greatest Game! Do you want to play? Mild arachnophobia warning, violence warning.")).lower().strip()
     if answer == "yes":
         play_game()
     else:
-        print("Sorry to hear, You're missing out.")
-        introduction()
+        print( "Sorry to hear, You're missing out." )
+        
 
 
 def play_game():
@@ -61,7 +72,29 @@ def begger_room():
 
 def minotaur_encounter():
     '''Function that starts the minotaur encounter'''
-    answer = input("Walking down a short stoney hallway the player walks into a small room, it has a very spartan look.\n A bed and very little else takes up a bit of space in the corner. Though the massive Minotaur sitting at a desk with a heavy axe with their back to the door might be bigger.\n What do you do?").lower().strip()
+    print(Style.BRIGHT + Fore.LIGHTCYAN_EX +''' 
+     .      .
+     |\____/|
+    (\|----|/)
+     \ 0  0 /
+      |    |
+   ___/\../\____
+  /     --       \
+ /  \         /   \
+|    \___/___/(   |
+\   /|  }{   | \  )
+ \  ||__}{__|  |  |
+  \  |;;;;;;;\  \ / \_______
+   \ /;;;;;;;;| [,,[|======'
+     |;;;;;;/ |     /
+     ||;;|\   |
+     ||;;/|   /
+     \_|:||__|
+      \ ;||  /
+      |= || =|
+      |= /\ =|
+      /_/  \_\ ''')
+    answer = input( reset_all + "Walking down a short stoney hallway the player walks into a small room, it has a very spartan look.\n A bed and very little else takes up a bit of space in the corner. Though the massive Minotaur sitting at a desk with a heavy axe with their back to the door might be bigger.\n What do you do?").lower().strip()
     if answer == "fight" or "talk":
         print("The Minotaur turns to you, their eyes immediately flairing in anger as they pick up the axe with one hand and swing it toward you.\n Caught unawares you take the full brunt of it to the side. The world zips and you fall unconcious. GAME OVER")
         again = input("Do you want to try again?").lower().strip()
