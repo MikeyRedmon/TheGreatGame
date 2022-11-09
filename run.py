@@ -14,14 +14,49 @@ d_color = Fore.GREEN            # Death Text
 reset_all = Style.RESET_ALL     # Reset to normal
 
 
+def welcome():
+    '''
+    Runs when app starts
+    introduces player to what the game is
+    '''
+    print(Fore.BLUE + '''
+                    |>>>                        |>>>
+                    |                           |
+                _  _|_  _                   _  _|_  _
+               | |_| |_| |                 | |_| |_| |
+               \  .      /                 \ .    .  /
+                \    ,  /                   \    .  /
+                 | .   |_   _   _   _   _   _| ,   |
+                 |    .| |_| |_| |_| |_| |_| |  .  |
+                 | ,   | .    .     .      . |    .|
+                 |   . |  .     . .   .  ,   |.    |
+     ___----_____| .   |.   ,  _______   .   |   , |---~_____
+_---~            |     |  .   /+++++++\    . | .   |         ~---_
+                 |.    | .    |+++++++| .    |   . |              ~-_
+              __ |   . |   ,  |+++++++|.  . _|__   |                 ~-_
+     ____--`~    '--~~__ .    |++++ __|----~    ~`---,              ___^~-__
+ -~--~                   ~---__|,--~'                  ~~----_____-~'   `~----~
+        ''')
+    print(
+        t_color +
+        textwrap.fill(
+            "Welcome to The Greatest Game!"
+            " This is a text based adventure game in which"
+            " you, as the player must figure out whats going on"
+            " Their are several secrets and multiple options"
+            " I hope you enjoy the game! I had fun making it."
+            )
+        )
+    introduction()
+
+
 def introduction():
-    '''Ran when program starts. Asks player if they want to play'''
+    '''Asks player if they want to play'''
     print(reset_all)
     answer = input(
         i_color + textwrap.fill(
-            "Welcome to The Greatest Game!"
             "Mild arachnophobia warning, violence warning."
-            "Do you want to play?"
+            " Do you want to play?"
         )
     ).lower().strip()
     print(reset_all)
@@ -595,4 +630,4 @@ def end():
         )
 
 
-introduction()
+welcome()
