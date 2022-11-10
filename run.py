@@ -23,7 +23,10 @@ weapons = [
     ]
 
 # Generator that pushes a single interger to the num value
+
+
 def gold():
+    '''Generates random number of gold pieces'''
     for num in range(2, 50):
         num = random.randint(2, 50)
         return num
