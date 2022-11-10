@@ -1,8 +1,10 @@
-
+# Import Random for the random elements of the game
+import random
 # Import Textwrap to wrap long text for better visuals
 import textwrap
 # Import Colorama for a better, more visually appealing experiance.
 from colorama import Fore, Back, Style
+
 
 # Colour Tags
 
@@ -12,6 +14,19 @@ e_color = Back.RED              # Error Colour
 s_color = Fore.LIGHTMAGENTA_EX  # Secret Colour
 d_color = Fore.GREEN            # Death Text
 reset_all = Style.RESET_ALL     # Reset to normal
+
+# Arry of weapons for the random weapon choice
+
+weapons = [
+    "Arming Sword", "Dagger", "Longsword",
+    "Flanged Mace", "Morning Star", "Halbard", "Glaive"
+    ]
+
+# Generator that pushes a single interger to the num value
+def gold():
+    for num in range(2, 50):
+        num = random.randint(2, 50)
+        return num
 
 
 def welcome():
@@ -95,10 +110,10 @@ def play_game():
         print(
             s_color +
             "Down the hall to the left you come to a room"
-            "inside you see a hand and a half sword its simple,"
-            "but sharp and well weighted."
-            "Beside it you see a pouch of gold."
-            "You take the items knowing you'll need them."
+            f" inside you see a {random.choice(weapons)}"
+            " its simple, but maintained and well weighted."
+            f"Beside it you see a pouch of {gold()} gold."
+            " You take the items knowing you'll need them."
         )
         begger_room()
         print(reset_all)
