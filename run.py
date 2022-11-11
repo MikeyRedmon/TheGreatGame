@@ -32,25 +32,18 @@ def gold():
         return num
 
 
-# The Hint function returns a hint for the player.
+# The Hint list returns a hint for the player.
 
-def hint():
-    '''
-    Returns a hint related to the part
-    of the game the player is in.
-    '''
-    hints = [
-        "Be Kind",
-        "Be sure to read all the text",
-        "Give some to gain a lot",
-        "Sit and stay a while...",
-        "You're looking for a way out.",
-        "Exploring is always an option.",
-        "Always try to go up."
-        ]
-    for hin in hints:
-        hin = random.choice(hints)
-        return hin
+
+hints = [
+    "Be Kind",
+    "Be sure to read all the text",
+    "Give some to gain a lot",
+    "Sit and stay a while...",
+    "You're looking for a way out.",
+    "Exploring is always an option.",
+    "Always try to go up."
+    ]
 
 
 def welcome():
@@ -180,7 +173,7 @@ def play_game():
         print(reset_all)
         introduction()
     elif answer == "hint":
-        hint()
+        print(t_color + f"{random.choice(hints)}")
         play_game()
     else:
         print(e_color + "Please input a direction")
@@ -269,7 +262,7 @@ def begger_room():
         print(reset_all)
         secret_ending_one()
     elif answer == "hint":
-        hint()
+        
         begger_room()
     else:
         print(e_color + "Please enter a valid option")
@@ -370,7 +363,7 @@ def goblin_encounter():
         print(reset_all)
         transition()
     elif answer == "hint":
-        hint()
+        print(t_color + f"{random.choice(hints)}")
         minotaur_encounter()
     else:
         print(t_color + "Please enter a viable choice")
@@ -445,7 +438,7 @@ def transition():
         print(reset_all)
         secret_ending_two()
     elif answer == "hint":
-        hint()
+        print(t_color + f"{random.choice(hints)}")
         transition()
     else:
         print(e_color + "Please enter a valid choice")
@@ -484,7 +477,7 @@ def the_gate():
         print(reset_all)
         wench()
     elif answer == "hint":
-        hint()
+        print(t_color + f"{random.choice(hints)}")
         the_gate()
     else:
         print(e_color + "Please input a valid choice")
@@ -530,7 +523,7 @@ def wench():
         print(reset_all)
         mossy_hallway()
     elif answer == "hint":
-        hint()
+        print(t_color + f"{random.choice(hints)}")
         wench()
     else:
         print(e_color + "please input a valid choice")
@@ -611,7 +604,7 @@ def mossy_hallway():
             print(reset_all)
             end()
     elif answer == "hint":
-        hint()
+        print(t_color + f"{random.choice(hints)}")
         mossy_hallway()
     else:
         print(e_color + "Please input a valid choice")
