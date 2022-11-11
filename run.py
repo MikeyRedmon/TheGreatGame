@@ -32,6 +32,27 @@ def gold():
         return num
 
 
+# The Hint function returns a hint for the player.
+
+def hint():
+    '''
+    Returns a hint related to the part
+    of the game the player is in.
+    '''
+    hints = [
+        "Be Kind",
+        "Be sure to read all the text",
+        "Give some to gain a lot",
+        "Sit and stay a while...",
+        "You're looking for a way out.",
+        "Exploring is always an option.",
+        "Always try to go up."
+        ]
+    for hin in hints:
+        hin = random.choice(hints)
+        return hin
+
+
 def welcome():
     '''
     Runs when app starts
@@ -158,6 +179,9 @@ def play_game():
             "Today isn't the day for this")
         print(reset_all)
         introduction()
+    elif answer == "hint":
+        hint()
+        play_game()
     else:
         print(e_color + "Please input a direction")
         print(reset_all)
@@ -244,6 +268,9 @@ def begger_room():
             )
         print(reset_all)
         secret_ending_one()
+    elif answer == "hint":
+        hint()
+        begger_room()
     else:
         print(e_color + "Please enter a valid option")
         print(reset_all)
@@ -342,6 +369,9 @@ def goblin_encounter():
             )
         print(reset_all)
         transition()
+    elif answer == "hint":
+        hint()
+        minotaur_encounter()
     else:
         print(t_color + "Please enter a viable choice")
         print(reset_all)
@@ -391,7 +421,7 @@ def transition():
         else:
             print(t_color + "Tough luck We hope you enjoyed The Greatest Game")
             print(reset_all)
-    elif answer == "gate":
+    elif answer == "up":
         print(
             t_color +
             "Climbing up some stones to the second floor"
@@ -414,6 +444,9 @@ def transition():
             )
         print(reset_all)
         secret_ending_two()
+    elif answer == "hint":
+        hint()
+        transition()
     else:
         print(e_color + "Please enter a valid choice")
         print(reset_all)
@@ -450,6 +483,9 @@ def the_gate():
             "rust and moss covered wench.")
         print(reset_all)
         wench()
+    elif answer == "hint":
+        hint()
+        the_gate()
     else:
         print(e_color + "Please input a valid choice")
         print(reset_all)
@@ -493,6 +529,9 @@ def wench():
             )
         print(reset_all)
         mossy_hallway()
+    elif answer == "hint":
+        hint()
+        wench()
     else:
         print(e_color + "please input a valid choice")
         print(reset_all)
@@ -571,6 +610,9 @@ def mossy_hallway():
                 )
             print(reset_all)
             end()
+    elif answer == "hint":
+        hint()
+        mossy_hallway()
     else:
         print(e_color + "Please input a valid choice")
         print(reset_all)
