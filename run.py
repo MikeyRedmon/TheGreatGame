@@ -189,7 +189,7 @@ def play_game():
 
 
 def begger_room():
-    '''Function that starts the begger room sequence.'''
+    '''Function that starts the beggar room sequence.'''
     print(reset_all)
     answer = input(
         i_color + textwrap.fill(
@@ -202,7 +202,7 @@ def begger_room():
         )
     ).lower().strip()
     print(reset_all)
-    if answer == "attack the begger":
+    if answer == "attack the beggar":
         print(
             d_color + textwrap.fill(
                 "The begger looks up as you charge toward them."
@@ -222,11 +222,11 @@ def begger_room():
         else:
             print("Tough luck! We hope you enjoyed The Greatest Game!")
             print(reset_all)
-    elif answer == "give the begger money":
+    elif answer == "give the beggar money":
         print(
             s_color +
             textwrap.fill(
-                "You hand the begger some money."
+                "You hand the beggar some money."
                 "They look up at you with tired yet bright eyes."
                 "'Thank you. Here, no good deed should go unrewarded.'"
                 "They hand you a leather chestpiece."
@@ -256,7 +256,7 @@ def begger_room():
                 )
             )
         minotaur_encounter()
-    elif answer == "sit with begger":
+    elif answer == "sit with beggar":
         print(
             s_color +
             textwrap.fill(
