@@ -44,3 +44,46 @@ You win by finding a secret ending, or getting to the exit of the dungeon you're
     - Generates a random number from 2 to 50 and outputs it
 
 ![Weapon and gold Secret](./images/secret.png)
+
+### Future Features
+
+- Add more branching paths
+- Create more randomness
+
+## Testing
+
+I have manually tested this project by doing the following
+ 
+1. Ran code through PEP8 linter and confirmed there are no problems.
+2. Given invalid inputs; Numbers when strings are expected, capitalisation. 
+3. Tested in my local terminal and the Code Insitute Heroku App. 
+
+### Bugs
+
+#### Solved Bugs
+
+- When creating the Random Number output, I had forgotten to set a range, the random number returning between 0 and 1. 
+
+### Remaining Bugs
+
+- No Bugs remaining. 
+
+### Validator Testing
+
+- PEP8
+    - No Errors were returned from PEP8 Online
+
+## Deployment
+
+The Project was deployed using Code insitutes mock terminal for Heroku. 
+
+- Steps for Deployment
+    1. Fork or Clone the repository
+    2. Create a new Heroku app
+    3. Set the buildbacks to Python and NodeJS in that order
+    4. Link the Heroku app to the repository
+    5. Click on Deploy
+
+### Credits
+
+- Code Insitute for the Deployment Terminal
