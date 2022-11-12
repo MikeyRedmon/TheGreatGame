@@ -340,7 +340,7 @@ def goblin_encounter():
             )
         ).lower().strip()
     print(reset_all)
-    if answer == "attack":
+    if answer == "fight":
         print(
             d_color +
             textwrap.fill(
@@ -601,7 +601,7 @@ def mossy_hallway():
                     "Tough luck We hope you enjoyed The Greatest Game"
                     )
                 print(reset_all)
-        elif choice == "attack":
+        elif choice == "fight":
             print(
                 t_color +
                 "You swing your weapon."
@@ -671,7 +671,7 @@ def end():
     print(
         t_color +
         textwrap.fill(
-            "Walking back to the wench system,"
+            "Walking back to the winch system,"
             "you apply whats left in the oil can liberally."
             "Testing the wench after a few minutes,"
             "it begins to give. The gate raises."
