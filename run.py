@@ -43,6 +43,8 @@ hints = [
     "You're looking for a way out.",
     "Exploring is always an option.",
     "Always try to go up."
+    "Investigate."
+    "Fight, talk, Sneak."
     ]
 
 
@@ -77,6 +79,9 @@ _---~            |     |  .   /+++++++\    . | .   |         ~---_
             " you, as the player must figure out whats going on"
             " Their are several secrets and multiple options"
             " I hope you enjoy the game! I had fun making it."
+            " Not all answers need to be one word"
+            " You can always ask for a hint!"
+            " The text will often give you ideas."
             )
         )
     introduction()
@@ -262,7 +267,7 @@ def begger_room():
         print(reset_all)
         secret_ending_one()
     elif answer == "hint":
-        
+        print(t_color + f"{random.choice(hints)}")
         begger_room()
     else:
         print(e_color + "Please enter a valid option")
@@ -274,6 +279,7 @@ def minotaur_encounter():
     '''Function that starts the minotaur encounter'''
     print(reset_all)
     answer = input(
+        i_color +
         "Walking down a short stone hallway the player walks into a small room"
         "it has a very spartan look."
         "A bed and very little else takes up a bit of space in the corner."
@@ -406,7 +412,6 @@ def transition():
             "The last thing you remember is falling."
             "GAME OVER."
             )
-        print(reset_all)
         again = input("Do you want to try again?").lower().strip()
         print(reset_all)
         if again == "yes":
@@ -475,7 +480,7 @@ def the_gate():
             "Next to the gate in an alcove is an old"
             "rust and moss covered wench.")
         print(reset_all)
-        wench()
+        winch()
     elif answer == "hint":
         print(t_color + f"{random.choice(hints)}")
         the_gate()
@@ -485,12 +490,12 @@ def the_gate():
         the_gate()
 
 
-def wench():
-    '''Function for wench encounter'''
+def winch():
+    '''Function for winch encounter'''
     print(reset_all)
     answer = input(
         i_color +
-        "You see the wench system, its covered in moss and rust."
+        "You see the winch system, its covered in moss and rust."
         "It looks to be the easiest way out however."
         ).lower().strip()
     print(reset_all)
@@ -524,11 +529,11 @@ def wench():
         mossy_hallway()
     elif answer == "hint":
         print(t_color + f"{random.choice(hints)}")
-        wench()
+        winch()
     else:
         print(e_color + "please input a valid choice")
         print(reset_all)
-        wench()
+        winch()
 
 
 def mossy_hallway():
@@ -537,10 +542,10 @@ def mossy_hallway():
     answer = input(
         i_color +
         "You see two doors down the hallway."
-        "Which one do you go down?"
+        "Which one do you go into?"
         ).lower().strip()
     print(reset_all)
-    if answer == "first door":
+    if answer == "first":
         print(
             t_color +
             textwrap.fill(
@@ -559,7 +564,7 @@ def mossy_hallway():
         else:
             print(t_color + "Tough luck We hope you enjoyed The Greatest Game")
             print(reset_all)
-    elif answer == "second door":
+    elif answer == "second":
         choice = input(
             i_color +
             textwrap.fill(
