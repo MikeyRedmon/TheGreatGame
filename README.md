@@ -62,7 +62,8 @@ I have manually tested this project by doing the following
 
 #### Solved Bugs
 
-- When creating the Random Number output, I had forgotten to set a range, the random number returning between 0 and 1. 
+- When creating the Random Number output, I had forgotten to set a range, the random number returning between 0 and 1.
+- Forgot to add an Else statement to the Spider room for input validation and capture. 
 
 ### Remaining Bugs
 

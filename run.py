@@ -42,9 +42,11 @@ hints = [
     "Sit and stay a while...",
     "You're looking for a way out.",
     "Exploring is always an option.",
-    "Always try to go up."
-    "Investigate."
-    "Fight, talk, Sneak."
+    "Always try to go up.",
+    "Investigate.",
+    "Fight, talk, Sneak.",
+    "We don't take numbers here...",
+    ""
     ]
 
 
@@ -547,7 +549,7 @@ def mossy_hallway():
     print(reset_all)
     if answer == "first":
         print(
-            t_color +
+            d_color +
             textwrap.fill(
                 "Entering the first door you look around"
                 "for anything that might be useful."
@@ -608,6 +610,10 @@ def mossy_hallway():
                 )
             print(reset_all)
             end()
+        else:
+            print(e_color + "Please input a valid choice")
+            print(reset_all)
+            mossy_hallway()
     elif answer == "hint":
         print(t_color + f"{random.choice(hints)}")
         mossy_hallway()
