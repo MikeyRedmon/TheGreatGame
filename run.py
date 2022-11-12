@@ -632,7 +632,7 @@ def secret_ending_one():
             )
         )
     print(reset_all)
-    end()
+    thank_you()
 
 
 def secret_ending_two():
@@ -651,7 +651,7 @@ def secret_ending_two():
             )
         )
     print(reset_all)
-    end()
+    thank_you()
 
 
 def end():
@@ -669,18 +669,24 @@ def end():
             "The world is bright and alive, birds chirp and the"
             "breeze on your skin is all you need to know you're"
             "Okay"
-            "END"))
+            "END")
+        )
+    thank_you()
+
+
+def thank_you():
+    '''A thank you message for the player'''
     print(
         t_color +
         textwrap.fill(
             "Thank you for playing!"
-            "I really appreciate it and hope you"
-            "had as much fun as I did writing"
-            "and programming it!"
-            "There are two secret endings along"
-            "with a couple secret encounters. Let me know if you find them."
-            )
+            " I really appreciate it and hope you"
+            " had as much fun as I did writing"
+            " and programming it!"
+            " There are two secret endings along"
+            " with a couple secret encounters. Let me know if you find them."
         )
+    )
 
 
 welcome()
