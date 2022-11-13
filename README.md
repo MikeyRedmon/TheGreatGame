@@ -18,6 +18,40 @@ Their are several ways to get to the end of the game, along side a couple secret
 
 You win by finding a secret ending, or getting to the exit of the dungeon you're in. 
 
+## User Experiance (UX)
+
+### Project Goals
+
+1. Display clear, coherant text in order to make the game feel intuitive. 
+2. Give the player challanging choices and fun secrets to discover
+3. Have robust data validation methods 
+
+### User Stories
+
+1. As a user, I want to be able to understand choices avalible to me from the terminal text
+2. As a user, I want to be able to ask for hints when I'm stuck
+3. As a user, I want to have options to complete challanges
+
+### Colour Scheme
+
+[Colorama](https://pypi.org/project/colorama/) has been used to apply colour to the teminal text. This has been used in order to give the project a more appealing visual look
+while also making the interface more intuitive and easier to read. 
+
+The colours being used are:
+- Inputs are displayed in Cyan
+- Terminal Outs are displayed in Red
+- A player death is signified with Green Text
+- The player discovering a secret is Magenta text
+- Error messages are displayed with a red background. 
+
+### Data Flow
+
+The following flowchart was designed using [Miro](https://miro.com/) in order to plan the flow of data. 
+
+![The Data flowchart for the game](./images/dataflow.png)
+
+The flow of the players actions are shown here, with secrets branching off from it. 
+
 ## Features
 
 ### Existing Features

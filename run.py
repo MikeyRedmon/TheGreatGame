@@ -46,7 +46,7 @@ hints = [
     "Investigate.",
     "Fight, talk, Sneak.",
     "We don't take numbers here...",
-    ""
+    "Input Text is in Cyan"
     ]
 
 
