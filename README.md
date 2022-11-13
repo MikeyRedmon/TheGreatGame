@@ -110,6 +110,8 @@ I have manually tested this project by doing the following
 
 ## Deployment
 
+The project was deployed on [Heroku](https://dashboard.heroku.com/)
+
 The Project was deployed using Code insitutes mock terminal for Heroku. 
 
 - Steps for Deployment
