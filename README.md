@@ -111,6 +111,14 @@ When asking for a hint, it prints as expected
 
 ![Screenshot of hint](/images/hinttest.png)
 
+When you enter a lose state, the game prompts you if you want to try again.
+
+![Screenshot of retry](/images/retry.png)
+
+It works as intended when you say anything other than yes the game ends
+
+![screenshot of ending](/images/finished.png)
+
 3. Tested in my local terminal and the Code Insitute Heroku App. 
 
 ### Bugs
