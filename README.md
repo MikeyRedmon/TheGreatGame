@@ -89,7 +89,24 @@ The flow of the players actions are shown here, with secrets branching off from 
 I have manually tested this project by doing the following
  
 1. Ran code through PEP8 linter and confirmed there are no problems.
-2. Given invalid inputs; Numbers when strings are expected, capitalisation. 
+    - The ascii art at the start of the program causes some errors, I'm ignoring those as I want it to look this way. 
+
+![Screenshot of terminal error return](/images/problems.png)
+
+2. Given invalid inputs; Numbers when strings are expected, capitalisation.
+
+Return when inputting an empty string is as expected
+
+![Screenshot of empty string input](/images/emptyerror.png)
+
+Return when putting an interger into the input
+
+![Screenshot of interger input](/images/inputtingnumbers.png)
+
+Return of a valid input but incorrect answer
+
+![Screenshot of incorrect answer](/images/validinputwronganswer.png)
+
 3. Tested in my local terminal and the Code Insitute Heroku App. 
 
 ### Bugs
