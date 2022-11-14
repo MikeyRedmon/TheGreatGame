@@ -107,6 +107,10 @@ Return of a valid input but incorrect answer
 
 ![Screenshot of incorrect answer](/images/validinputwronganswer.png)
 
+When asking for a hint, it prints as expected
+
+![Screenshot of hint](/images/hinttest.png)
+
 3. Tested in my local terminal and the Code Insitute Heroku App. 
 
 ### Bugs
